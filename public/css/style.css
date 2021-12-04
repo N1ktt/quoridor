@@ -11,6 +11,36 @@ header {
     grid-column: 1/-1;
     grid-row: 1/2;
     background: linear-gradient(90deg, rgb(36, 114, 62), rgb(40, 160, 80));
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1.5fr 1fr;
+    grid-template-columns: 2fr repeat(6, 5fr) 2fr;
+}
+.btn-rules {
+    grid-row: 2/4;
+    grid-column: 7/8;
+    color: rgb(190, 240, 137);
+    font-size: 2vw;
+    background: linear-gradient(45deg, rgb(24, 141, 63), rgba(24, 141, 63, 0.185), rgb(24, 141, 63));
+    border: rgb(37, 163, 26) 1px solid;
+    transition-duration: 2s;
+    font-family: monospace;
+    border-radius: 1vw;
+}
+.btn-rules:hover {
+    transform: scale(105%);
+    transition-duration: 2s;
+}
+.pop-up {
+    grid-row: 2/-2;
+    grid-column: 2/-2;
+    background: linear-gradient(90deg, rgb(39, 158, 79), rgb(30, 109, 27));
+    z-index: 2;
+    opacity: 0.9;
+    border: #fff 2px solid;
+    border-radius: 5vw;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr repeat(10, 1fr) 0.5fr;
+    grid-template-columns: 1fr 9fr 1fr 1fr;
 }
 main {
     grid-column: 2/21;
@@ -21,7 +51,7 @@ main {
     grid-template-rows: 1fr repeat(9, 5fr 1fr);
     border-radius: 1vw;
 }
-.btn_menu {
+.btn-menu {
     background: linear-gradient(90deg, rgb(39, 158, 79), rgb(30, 109, 27));
     border-radius: 10vh;
     border: 0px;
@@ -30,22 +60,22 @@ main {
     font-family: monospace;
     color: rgb(190, 240, 137);
 }
-.btn_menu:hover {
+.btn-menu:hover {
     transform: scale(130%);
     transition-duration: 0.5s;
 }
-.btn_join {
+.btn-join {
     grid-column: 5/16;
     grid-row: 11/16;
 }
-.btn_create {
+.btn-create {
     grid-column: 5/16;
     grid-row: 5/10;
 }
-.play_menu_btns {
+.play-menu-btns {
     animation: menu_btns 1.5s ease-out;
 }
-.play_reverse_menu_btns {
+.play-reverse-menu-btns {
     animation: menu_btns_reverse 1.5s ease-in;
 }
 @keyframes menu_btns {

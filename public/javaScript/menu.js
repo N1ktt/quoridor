@@ -1,12 +1,12 @@
 const btn_create = document.createElement("input")
 btn_create.type = "button"
 btn_create.value = "Create game"
-btn_create.className = "btn_create btn_menu play_menu_btns"
+btn_create.className = "btn-create btn-menu play-menu-btns"
 
 const btn_join = document.createElement("input")
 btn_join.type = "button"
 btn_join.value = "Join game"
-btn_join.className = "btn_join btn_menu play_menu_btns"
+btn_join.className = "btn-join btn-menu play-menu-btns"
 
 function menu_off() {
     //removes main menu
@@ -14,8 +14,8 @@ function menu_off() {
         .querySelector("main")
         .querySelectorAll("input")
         .forEach((element) => {
-            element.classList.remove("play_menu_btns")
-            element.classList.add("play_reverse_menu_btns")
+            element.classList.remove("play-menu-btns")
+            element.classList.add("play-reverse-menu-btns")
         })
 
     setTimeout(function () {
@@ -29,8 +29,8 @@ function menu_off() {
 }
 function play_on() {
     document.querySelector("main").append(btn_create)
-    document.querySelector(".btn_create").addEventListener("click", menu_off)
+    document.querySelector(".btn-create").addEventListener("click", menu_off)
     document.querySelector("main").append(btn_join)
-    document.querySelector(".btn_join").addEventListener("click", menu_off)
+    document.querySelector(".btn-join").addEventListener("click", menu_off)
 }
 play_on()
