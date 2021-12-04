@@ -10,18 +10,19 @@ body {
 header {
     grid-column: 1/-1;
     grid-row: 1/2;
-    background-color: rgb(36, 114, 62);
+    background: linear-gradient(90deg, rgb(36, 114, 62), rgb(40, 160, 80));
 }
 main {
     grid-column: 2/21;
     grid-row: 3/22;
-    background-color: rgb(32, 36, 33);
+    background: linear-gradient(rgb(32, 36, 33), rgb(30, 32, 31));
     display: grid;
     grid-template-columns: 1fr repeat(9, 5fr 1fr);
     grid-template-rows: 1fr repeat(9, 5fr 1fr);
+    border-radius: 1vw;
 }
 .btn_menu {
-    background-color: rgb(38, 139, 34);
+    background: linear-gradient(90deg, rgb(39, 158, 79), rgb(30, 109, 27));
     border-radius: 10vh;
     border: 0px;
     font-size: 6vw;
