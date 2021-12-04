@@ -21,24 +21,25 @@ main {
     grid-template-rows: 1fr repeat(9, 5fr 1fr);
 }
 .btn_menu {
-    background-color: rgb(58, 199, 53);
-    border-radius: 10px;
+    background-color: rgb(38, 139, 34);
+    border-radius: 10vh;
     border: 0px;
-    font-size: 3.5em;
+    font-size: 6vw;
     transition-duration: 0.5s;
     font-family: monospace;
+    color: rgb(190, 240, 137);
 }
 .btn_menu:hover {
     transform: scale(130%);
     transition-duration: 0.5s;
 }
 .btn_join {
-    grid-column: 7/14;
-    grid-row: 11/14;
+    grid-column: 5/16;
+    grid-row: 11/16;
 }
 .btn_create {
-    grid-column: 7/14;
-    grid-row: 5/8;
+    grid-column: 5/16;
+    grid-row: 5/10;
 }
 .play_menu_btns {
     animation: menu_btns 1.5s ease-out;
