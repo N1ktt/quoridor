@@ -33,22 +33,83 @@ function play_on() {
     document.querySelector("main").append(btn_join)
     document.querySelector(".btn-join").addEventListener("click", menu_off)
 }
-function create_game(){
+function create_game() {
     menu_off()
-    const main = document.querySelector('main')
-    const p = document.createElement('p')
-    p.innerText="Number of players:"
-    main.append(p)
-    const fieldset = document.createElement("fieldset")
-    const div = document.createElement('div')
-    fieldset.append(div)
-    const checkbox = document.createElement('input')
-    // checkbox.type="checkbox"
-    // checkbox.name="player-number"
-    // checkbox.checked=true
-    p.innerText="2"
-    fieldset.querySelector('div').append(p)
-    fieldset.querySelector('div').append(checkbox)
-    main.append(fieldset)
+    setTimeout(function () {
+        //makes new main
+        let main = document.querySelector("main")
+        main.remove()
+        main = document.createElement("main")
+        //makes h2 crate game
+        const h2 = document.createElement("h2")
+        h2.innerText = "Create game"
+        main.append(h2)
+        //makes p number of players
+        const p1 = document.createElement("p")
+        p1.innerText = "Number of players:"
+        main.append(p1)
+        //makes section 1
+        const section = document.createElement("section")
+        main.append(section)
+        //makes h3"2"
+        const h3 = document.createElement("h3")
+        h3.innerText = "2"
+        main.querySelector("section").append(h3)
+        //makes radio for 2
+        const radio = document.createElement("input")
+        radio.type = "radio"
+        radio.name = "player-number"
+        main.querySelector("section").append(radio)
+        //makes section 2
+        const section2 = document.createElement("section")
+        main.append(section2)
+        //makes h3 "4"
+        const h33 = document.createElement("h3")
+        h33.innerText = "4"
+        main.querySelectorAll("section")[1].append(h33)
+        //makes radio for 4
+        const radio2 = document.createElement("input")
+        radio2.type = "radio"
+        radio2.name = "player-number"
+        main.querySelectorAll("section")[1].append(radio2)
+        //makes p name
+        const p4 = document.createElement("p")
+        p4.innerText = "Game name:"
+        main.append(p4)
+        //makes input for game name
+        const input1 = document.createElement("input")
+        input1.type = "text"
+        input1.name = "game-name"
+        main.append(input1)
+        //makes p password
+        const p5 = document.createElement("p")
+        p5.innerText = "Game password (if left empty it will be 123):"
+        main.append(p5)
+        //makes input for password
+        const input2 = document.createElement("input")
+        input2.type = "text"
+        input2.name = "game-password"
+        main.append(input2)
+        //makes p checkbox
+        const p6 = document.createElement("p")
+        p6.innerText = "Password ON"
+        main.append(p6)
+        //makes checkbox in section
+        const section3 = document.createElement("section")
+        main.append(section3)
+        const checkbox = document.createElement("input")
+        checkbox.type = "checkbox"
+        checkbox.checked = true
+        checkbox.name = "password-on"
+        main.querySelectorAll("section")[2].append(checkbox)
+        //makes button create
+        const input3 = document.createElement("input")
+        input3.type = "button"
+        input3.value = "Create"
+        main.append(input3)
+        //adds main to page
+        main.classList.add("create-game")
+        document.querySelector("body").insertBefore(main, document.querySelector("script"))
+    }, 1500)
 }
 play_on()
