@@ -29,8 +29,26 @@ function menu_off() {
 }
 function play_on() {
     document.querySelector("main").append(btn_create)
-    document.querySelector(".btn-create").addEventListener("click", menu_off)
+    document.querySelector(".btn-create").addEventListener("click", create_game)
     document.querySelector("main").append(btn_join)
     document.querySelector(".btn-join").addEventListener("click", menu_off)
+}
+function create_game(){
+    menu_off()
+    const main = document.querySelector('main')
+    const p = document.createElement('p')
+    p.innerText="Number of players:"
+    main.append(p)
+    const fieldset = document.createElement("fieldset")
+    const div = document.createElement('div')
+    fieldset.append(div)
+    const checkbox = document.createElement('input')
+    // checkbox.type="checkbox"
+    // checkbox.name="player-number"
+    // checkbox.checked=true
+    p.innerText="2"
+    fieldset.querySelector('div').append(p)
+    fieldset.querySelector('div').append(checkbox)
+    main.append(fieldset)
 }
 play_on()
