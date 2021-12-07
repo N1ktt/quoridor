@@ -31,6 +31,7 @@ header {
 .btn-rules:hover {
     transform: scale(105%);
     transition-duration: 2s;
+    cursor: pointer;
 }
 
 .pop-up {
@@ -126,6 +127,7 @@ main {
 .btn-menu:hover {
     transform: scale(130%);
     transition-duration: 0.5s;
+    cursor: pointer;
 }
 
 .btn-join {
@@ -211,6 +213,16 @@ main {
 .create-game input:nth-child(11) {
     grid-column: 14/17;
     grid-row: 16/17;
+    background: linear-gradient(90deg, rgb(39, 158, 79), rgb(30, 109, 27));
+    border-radius: 10vh;
+    border: 0px;
+    font-size: 2vw;
+    font-family: monospace;
+    color: rgb(190, 240, 137);
+}
+.create-game input:nth-child(11):hover {
+    background: linear-gradient(90deg, rgb(48, 170, 89), rgb(38, 114, 36));
+    cursor: pointer;
 }
 .create-game section {
     display: flex;
