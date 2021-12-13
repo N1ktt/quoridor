@@ -56,22 +56,33 @@ function create_game() {
         h3.innerText = "2"
         main.querySelector("section").append(h3)
         //makes radio for 2
+        const label = document.createElement("label")
         const radio = document.createElement("input")
         radio.type = "radio"
         radio.name = "player-number"
-        main.querySelector("section").append(radio)
+        radio.checked = true
+        label.append(h3)
+        label.append(radio)
+        const span = document.createElement("span")
+        label.append(span)
+        
+        main.querySelector("section").append(label)
         //makes section 2
         const section2 = document.createElement("section")
         main.append(section2)
         //makes h3 "4"
         const h33 = document.createElement("h3")
         h33.innerText = "4"
-        main.querySelectorAll("section")[1].append(h33)
         //makes radio for 4
+        const label2 = document.createElement("label")
         const radio2 = document.createElement("input")
         radio2.type = "radio"
         radio2.name = "player-number"
-        main.querySelectorAll("section")[1].append(radio2)
+        label2.append(h33)
+        label2.append(radio2)
+        const span2 = document.createElement("span")
+        label2.append(span2)
+        main.querySelectorAll("section")[1].append(label2)
         //makes p name
         const p4 = document.createElement("p")
         p4.innerText = "Game name:"
@@ -97,11 +108,15 @@ function create_game() {
         //makes checkbox in section
         const section3 = document.createElement("section")
         main.append(section3)
+        const label3 = document.createElement("label")
         const checkbox = document.createElement("input")
         checkbox.type = "checkbox"
         checkbox.checked = true
         checkbox.name = "password-on"
-        main.querySelectorAll("section")[2].append(checkbox)
+        label3.append(checkbox)
+        const span3 = document.createElement("span")
+        label3.append(span3)
+        main.querySelectorAll("section")[2].append(label3)
         //makes button create
         const input3 = document.createElement("input")
         input3.type = "button"
