@@ -91,13 +91,11 @@ header {
         transform: translateY(-100vh);
     }
 
-    100% {
-    }
+    100% {}
 }
 
 @keyframes pop-up-close {
-    0% {
-    }
+    0% {}
 
     100% {
         transform: translateY(-200vh);
@@ -167,49 +165,70 @@ main {
         transform: translateY(-100vh);
     }
 }
+
 .create-game {
     text-align: center;
+    /* min-height: 0;
+    min-width: 0;
+    overflow: hidden; */
 }
+
+/* .create-game section {
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+} */
+
 .create-game h2:nth-child(1) {
     grid-column: 2/-2;
     grid-row: 2/3;
 }
+
 .create-game p:nth-child(2) {
     grid-column: 2/5;
     grid-row: 4/5;
 }
+
 .create-game section:nth-child(3) {
     grid-column: 8/11;
-    grid-row: 4/5;
+    grid-row: 3/6;
 }
+
 .create-game section:nth-child(4) {
     grid-column: 14/17;
-    grid-row: 4/5;
+    grid-row: 3/6;
 }
+
 .create-game p:nth-child(5) {
     grid-column: 2/5;
     grid-row: 8/9;
 }
+
 .create-game input:nth-child(6) {
     grid-column: 8/17;
     grid-row: 8/9;
 }
+
 .create-game p:nth-child(7) {
     grid-column: 2/5;
     grid-row: 12/13;
 }
+
 .create-game input:nth-child(8) {
     grid-column: 8/17;
     grid-row: 12/13;
 }
+
 .create-game p:nth-child(9) {
     grid-column: 2/5;
     grid-row: 16/17;
 }
+
 .create-game section:nth-child(10) {
     grid-column: 8/11;
     grid-row: 16/17;
 }
+
 .create-game input:nth-child(11) {
     grid-column: 14/17;
     grid-row: 16/17;
@@ -220,23 +239,27 @@ main {
     font-family: monospace;
     color: rgb(190, 240, 137);
 }
+
 .create-game input:nth-child(11):hover {
     background: linear-gradient(90deg, rgb(48, 170, 89), rgb(38, 114, 36));
     cursor: pointer;
 }
-.create-game section {
+
+/* .create-game section {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
-}
+} */
+
 .create-game h2,
 .create-game h3,
 .create-game p {
     font-family: monospace;
     color: rgb(190, 240, 137);
 }
+
 .create-game input[type="text"] {
     background: linear-gradient(rgb(32, 36, 33), rgb(30, 32, 31));
     border: 2px solid #fff;
@@ -244,4 +267,70 @@ main {
     font-size: 1.3em;
     color: rgb(190, 240, 137);
     text-align: center;
+}
+
+.create-game section:nth-child(3) label,
+.create-game section:nth-child(4) label {
+    display: block;
+    position: relative;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+
+.create-game section:nth-child(3) input,
+.create-game section:nth-child(4) input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.create-game section:nth-child(3) span,
+.create-game section:nth-child(4) span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.create-game section:nth-child(3) label:hover input~span,
+.create-game section:nth-child(4) label:hover input~span {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.create-game section:nth-child(3) input:checked~span,
+.create-game section:nth-child(4) input:checked~span {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.create-game section:nth-child(3) span::after,
+.create-game section:nth-child(4) span::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.create-game section:nth-child(3) input:checked~span::after,
+.create-game section:nth-child(4) input:checked~span::after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.create-game section:nth-child(3) span::after,
+.create-game section:nth-child(4) span::after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
 }
