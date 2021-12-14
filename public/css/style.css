@@ -211,7 +211,7 @@ main {
 
 .create-game p:nth-child(7) {
     grid-column: 2/5;
-    grid-row: 12/13;
+    grid-row: 11/14;
 }
 
 .create-game input:nth-child(8) {
@@ -268,7 +268,7 @@ main {
     color: rgb(190, 240, 137);
     text-align: center;
 }
-
+/* radio */
 .create-game section:nth-child(3) label,
 .create-game section:nth-child(4) label {
     display: block;
@@ -295,22 +295,20 @@ main {
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: rgb(202, 247, 155);
     border-radius: 50%;
 }
 
 .create-game section:nth-child(3) label:hover input~span,
 .create-game section:nth-child(4) label:hover input~span {
-    background-color: #ccc;
+    background-color: rgb(167, 219, 111);
 }
 
-/* When the radio button is checked, add a blue background */
 .create-game section:nth-child(3) input:checked~span,
 .create-game section:nth-child(4) input:checked~span {
-    background-color: #2196F3;
+    background-color: rgb(24, 141, 63);
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .create-game section:nth-child(3) span::after,
 .create-game section:nth-child(4) span::after {
     content: "";
@@ -318,13 +316,11 @@ main {
     display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .create-game section:nth-child(3) input:checked~span::after,
 .create-game section:nth-child(4) input:checked~span::after {
     display: block;
 }
 
-/* Style the indicator (dot/circle) */
 .create-game section:nth-child(3) span::after,
 .create-game section:nth-child(4) span::after {
     top: 9px;
@@ -332,5 +328,65 @@ main {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: white;
+    background: rgb(190, 240, 137);
 }
+/* radio */
+/* checkbox */
+.create-game section:nth-child(10) label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+  
+.create-game section:nth-child(10) label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+.create-game section:nth-child(10) label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+}
+  
+.create-game section:nth-child(10) label:hover input~span {
+    background-color: rgb(167, 219, 111);
+}
+  
+.create-game section:nth-child(10) input:checked~span{
+    background-color: rgb(24, 141, 63);
+}
+  
+.create-game section:nth-child(10) span::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.create-game section:nth-child(10) input:checked~span::after {
+    display: block;
+}
+  
+.create-game section:nth-child(10) span::after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* checkbox */
+
