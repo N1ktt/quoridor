@@ -31,7 +31,7 @@ function play_on() {
     document.querySelector("main").append(btn_create)
     document.querySelector(".btn-create").addEventListener("click", create_game)
     document.querySelector("main").append(btn_join)
-    document.querySelector(".btn-join").addEventListener("click", menu_off)
+    document.querySelector(".btn-join").addEventListener("click", join_game)
 }
 function create_game() {
     menu_off()
@@ -121,10 +121,20 @@ function create_game() {
         const input3 = document.createElement("input")
         input3.type = "button"
         input3.value = "Create"
+        input3.addEventListener('click',()=>{
+            document.querySelector('.create-game').remove()
+            document.querySelector("body").insertBefore(document.createElement('main'), document.querySelector("script"))
+        })
         main.append(input3)
         //adds main to page
         main.classList.add("create-game")
         document.querySelector("body").insertBefore(main, document.querySelector("script"))
     }, 1500)
+}
+function join_game(){
+    menu_off()
+    setTimeout(() => {
+        document.querySelector('main').remove()
+    }, 1500);
 }
 play_on()
