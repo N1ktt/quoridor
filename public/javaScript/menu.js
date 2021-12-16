@@ -27,12 +27,14 @@ function menu_off() {
             })
     }, 1500)
 }
+
 function play_on() {
     document.querySelector("main").append(btn_create)
     document.querySelector(".btn-create").addEventListener("click", create_game)
     document.querySelector("main").append(btn_join)
     document.querySelector(".btn-join").addEventListener("click", join_game)
 }
+
 function create_game() {
     menu_off()
     setTimeout(function () {
@@ -65,7 +67,7 @@ function create_game() {
         label.append(radio)
         const span = document.createElement("span")
         label.append(span)
-        
+
         main.querySelector("section").append(label)
         //makes section 2
         const section2 = document.createElement("section")
@@ -121,7 +123,7 @@ function create_game() {
         const input3 = document.createElement("input")
         input3.type = "button"
         input3.value = "Create"
-        input3.addEventListener('click',()=>{
+        input3.addEventListener('click', () => {
             document.querySelector('.create-game').remove()
             document.querySelector("body").insertBefore(document.createElement('main'), document.querySelector("script"))
         })
@@ -131,10 +133,29 @@ function create_game() {
         document.querySelector("body").insertBefore(main, document.querySelector("script"))
     }, 1500)
 }
-function join_game(){
+
+function join_game() {
     menu_off()
     setTimeout(() => {
         document.querySelector('main').remove()
+        const main = document.createElement('main')
+        set_join_padding()
     }, 1500);
 }
-play_on()
+
+//play_on()
+
+function set_join_padding() {
+    const ulHeight = document.querySelector('.join-game').querySelector('ul').offsetHeight
+    let children = document.querySelector('.join-game').querySelector('ul').children
+    let childHeight = (children.length - 1) * 90
+    let divHeight = (childHeight - ulHeight) / 2
+    console.log(divHeight)
+    document.querySelector('main').querySelector('div').style.height = divHeight
+
+}
+window.addEventListener("resize", () => {
+    if (document.querySelector('.join-game') != null) {
+        set_join_padding()
+    }
+})
