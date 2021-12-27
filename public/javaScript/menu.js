@@ -143,18 +143,20 @@ function join_game() {
     }, 1500)
 }
 
-play_on()
+// play_on()
 
-function set_join_padding() {
-    const ulHeight = document.querySelector(".join-game").querySelector("ul").offsetHeight
-    let children = document.querySelector(".join-game").querySelector("ul").children
-    let childHeight = (children.length - 1) * 90
-    let divHeight = (childHeight - ulHeight) / 2
-    console.log(divHeight)
-    document.querySelector("main").querySelector("div").style.height = divHeight
-}
-window.addEventListener("resize", () => {
-    if (document.querySelector(".join-game") != null) {
-        set_join_padding()
-    }
-})
+//some code that probably wont be used anymore, but im not deleting it for some reason
+
+// function set_join_padding() {
+//     const ulHeight = document.querySelector(".join-game").querySelector("ul").offsetHeight
+//     let children = document.querySelector(".join-game").querySelector("ul").children
+//     let childHeight = (children.length - 1) * 90
+//     let divHeight = (childHeight - ulHeight) / 2
+//     console.log(divHeight)
+//     document.querySelector("main").querySelector("div").style.height = divHeight
+// }
+// window.addEventListener("resize", () => {
+//     if (document.querySelector(".join-game") != null) {
+//         set_join_padding()
+//     }
+// })
