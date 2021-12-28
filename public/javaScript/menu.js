@@ -39,9 +39,8 @@ function create_game() {
     menu_off()
     setTimeout(function () {
         //makes new main
-        let main = document.querySelector("main")
-        main.remove()
-        main = document.createElement("main")
+        document.querySelector("main").remove()
+        const main = document.createElement("main")
         //makes h2 crate game
         const h2 = document.createElement("h2")
         h2.innerText = "Create game"
@@ -137,9 +136,9 @@ function create_game() {
 function join_game() {
     menu_off()
     setTimeout(() => {
+        //makes new main
         document.querySelector("main").remove()
         const main = document.createElement("main")
-        set_join_padding()
     }, 1500)
 }
 
