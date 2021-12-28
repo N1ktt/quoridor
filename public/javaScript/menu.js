@@ -132,13 +132,37 @@ function create_game() {
         document.querySelector("body").insertBefore(main, document.querySelector("script"))
     }, 1500)
 }
-
+function refresh_list() {}
 function join_game() {
     menu_off()
     setTimeout(() => {
         //makes new main
         document.querySelector("main").remove()
         const main = document.createElement("main")
+        //creates h2
+        const h2 = document.createElement("h2")
+        h2.innerText = "Join game"
+        main.append(h2)
+        //makes p name
+        const p1 = document.createElement("p")
+        p1.innerText = "Name"
+        main.append(p1)
+        //makes p password
+        const p2 = document.createElement("p")
+        p2.innerText = "Password"
+        main.append(p2)
+        //makes p number of players
+        const p3 = document.createElement("p")
+        p3.innerText = "Number of players"
+        main.append(p3)
+        //makes refresh button
+        const input1 = document.createElement("input")
+        input1.type = "button"
+        input1.value = "Refresh"
+        //makes blank ul to be deleted in refresh function
+        const ul = document.createElement("ul")
+        main.append(ul)
+        refresh_list()
     }, 1500)
 }
 
