@@ -447,6 +447,7 @@ main {
     flex-flow: column nowrap;
     align-items: center;
     overflow-y: auto;
+    overflow-x: hidden;
     gap: 10px;
 }
 
@@ -477,6 +478,12 @@ main {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+    transition-duration: 0.5s;
+}
+.join-game li:hover {
+    transform: scale(110%);
+    cursor: pointer;
+    transition-duration: 0.5s;
 }
 .join-game input[type="text"] {
     background: linear-gradient(rgb(32, 36, 33), rgb(30, 32, 31));

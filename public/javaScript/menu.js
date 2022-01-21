@@ -139,6 +139,7 @@ function join_game() {
         //makes new main
         document.querySelector("main").remove()
         const main = document.createElement("main")
+        main.classList.add("join-game")
         //creates h2
         const h2 = document.createElement("h2")
         h2.innerText = "Join game"
@@ -161,12 +162,26 @@ function join_game() {
         input1.value = "Refresh"
         //makes blank ul to be deleted in refresh function
         const ul = document.createElement("ul")
+        ul.innerHTML = `<li>
+        <h3>Name</h3>
+        <input type="text" placeholder="Password" />
+        <h3>#/#</h3>
+    </li><li>
+    <h3>Name</h3>
+    <input type="text" placeholder="Password" />
+    <h3>#/#</h3>
+</li><li>
+<h3>Name</h3>
+<input type="text" placeholder="Password" />
+<h3>#/#</h3>
+</li>`
         main.append(ul)
         refresh_list()
+        document.querySelector("body").append(main)
     }, 1500)
 }
 
-// play_on()
+play_on()
 
 //some code that probably wont be used anymore, but im not deleting it for some reason
 
