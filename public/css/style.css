@@ -92,13 +92,11 @@ header {
         transform: translateY(-100vh);
     }
 
-    100% {
-    }
+    100% {}
 }
 
 @keyframes pop-up-close {
-    0% {
-    }
+    0% {}
 
     100% {
         transform: translateY(-200vh);
@@ -302,13 +300,13 @@ main {
     border-radius: 50%;
 }
 
-.create-game section:nth-child(3) label:hover input ~ span,
-.create-game section:nth-child(4) label:hover input ~ span {
+.create-game section:nth-child(3) label:hover input~span,
+.create-game section:nth-child(4) label:hover input~span {
     background-color: rgb(167, 219, 111);
 }
 
-.create-game section:nth-child(3) input:checked ~ span,
-.create-game section:nth-child(4) input:checked ~ span {
+.create-game section:nth-child(3) input:checked~span,
+.create-game section:nth-child(4) input:checked~span {
     background-color: rgb(24, 141, 63);
 }
 
@@ -319,8 +317,8 @@ main {
     display: none;
 }
 
-.create-game section:nth-child(3) input:checked ~ span::after,
-.create-game section:nth-child(4) input:checked ~ span::after {
+.create-game section:nth-child(3) input:checked~span::after,
+.create-game section:nth-child(4) input:checked~span::after {
     display: block;
 }
 
@@ -363,11 +361,11 @@ main {
     background-color: #fff;
 }
 
-.create-game section:nth-child(10) label:hover input ~ span {
+.create-game section:nth-child(10) label:hover input~span {
     background-color: rgb(167, 219, 111);
 }
 
-.create-game section:nth-child(10) input:checked ~ span {
+.create-game section:nth-child(10) input:checked~span {
     background-color: rgb(24, 141, 63);
 }
 
@@ -377,7 +375,7 @@ main {
     display: none;
 }
 
-.create-game section:nth-child(10) input:checked ~ span::after {
+.create-game section:nth-child(10) input:checked~span::after {
     display: block;
 }
 
@@ -431,11 +429,13 @@ main {
     font-family: monospace;
     border-radius: 1vw;
 }
+
 .join-game input:nth-child(5):hover {
     transform: scale(105%);
     transition-duration: 2s;
     cursor: pointer;
 }
+
 .join-game ul {
     grid-column: 2/-2;
     grid-row: 6/-2;
@@ -462,17 +462,20 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 .join-game p,
 .join-game h3 {
     color: #fff;
     font-family: monospace;
     font-size: 1.3vw;
 }
+
 .join-game h2 {
     color: #fff;
     font-family: monospace;
     font-size: 2.3vw;
 }
+
 /* join game - game list */
 .join-game li {
     display: flex;
@@ -480,11 +483,13 @@ main {
     justify-content: space-evenly;
     transition-duration: 0.5s;
 }
+
 .join-game li:hover {
     transform: scale(110%);
     cursor: pointer;
     transition-duration: 0.5s;
 }
+
 .join-game input[type="text"] {
     background: linear-gradient(rgb(32, 36, 33), rgb(30, 32, 31));
     border: 2px solid #fff;
@@ -492,4 +497,102 @@ main {
     font-size: 1.3em;
     color: rgb(190, 240, 137);
     text-align: center;
+}
+
+.waiting {
+    color: #fff;
+}
+
+.waiting p {
+    text-align: center;
+}
+
+.waiting h2:nth-child(1) {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.waiting p:nth-child(2) {
+    grid-row: 4/6;
+    grid-column: 2/5;
+}
+
+.waiting p:nth-child(3) {
+    grid-row: 4/6;
+    grid-column: 6/9;
+}
+
+.waiting p:nth-child(4) {
+    grid-row: 4/6;
+    grid-column: 12/15;
+}
+
+.waiting p:nth-child(5) {
+    grid-row: 4/6;
+    grid-column: 16/19;
+}
+
+.waiting p:nth-child(6) {
+    grid-row: 6/7;
+    grid-column: 2/5;
+}
+
+.waiting input:nth-child(7) {
+    grid-row: 6/7;
+    grid-column: 6/9;
+    background: linear-gradient(rgb(32, 36, 33), rgb(30, 32, 31));
+    border: 2px solid #fff;
+    border-radius: 2vh;
+    font-size: 1.3em;
+    color: rgb(190, 240, 137);
+    text-align: center;
+}
+
+.waiting p:nth-child(8) {
+    grid-row: 10/11;
+    grid-column: 2/5;
+
+}
+
+.waiting p:nth-child(9) {
+    grid-row: 10/11;
+    grid-column: 6/9;
+}
+
+.waiting p:nth-child(10) {
+    grid-row: 12/13;
+    grid-column: 6/9;
+}
+
+.waiting p:nth-child(11) {
+    grid-row: 14/15;
+    grid-column: 6/9;
+}
+
+.waiting p:nth-child(12) {
+    grid-row: 16/17;
+    grid-column: 6/9;
+}
+
+.waiting p:nth-child(13) {
+    grid-row: 16/17;
+    grid-column: 14/17;
+}
+
+.waiting input:nth-child(13) {
+    grid-row: 16/17;
+    grid-column: 14/17;
+    background: linear-gradient(90deg, rgb(39, 158, 79), rgb(30, 109, 27));
+    border-radius: 10vh;
+    border: 0px;
+    font-size: 2vw;
+    font-family: monospace;
+    color: rgb(190, 240, 137);
+}
+
+
+.waiting input:nth-child(13):hover {
+    background: linear-gradient(90deg, rgb(48, 170, 89), rgb(38, 114, 36));
+    cursor: pointer;
 }

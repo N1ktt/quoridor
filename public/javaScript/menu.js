@@ -123,8 +123,7 @@ function create_game() {
         input3.type = "button"
         input3.value = "Create"
         input3.addEventListener("click", () => {
-            document.querySelector(".create-game").remove()
-            document.querySelector("body").insertBefore(document.createElement("main"), document.querySelector("script"))
+            waiting(false);
         })
         main.append(input3)
         //adds main to page
@@ -180,7 +179,76 @@ function join_game() {
         document.querySelector("body").append(main)
     }, 1500)
 }
-
+function waiting(host)
+{
+    //makes new main
+    document.querySelector("main").remove()
+    const main = document.createElement("main")
+    main.classList.add("waiting")
+    //creates h2
+    const h2 = document.createElement("h2")
+    if(host)
+    {
+        h2.innerText = "Hosting"
+    }else{
+        h2.innerText = "Waiting for Host"
+    }
+    main.append(h2)
+    //makes 2 p for game name
+    const p1 = document.createElement("p")
+    p1.innerText = "Game name:"
+    main.append(p1)
+    const p2 = document.createElement("p")
+    p2.innerText = "can't get game name"
+    main.append(p2)
+    //makes 2 p for game password
+    const p3 = document.createElement("p")
+    p3.innerText = "Password:"
+    main.append(p3)
+    const p4 = document.createElement("p")
+    p4.innerText = "can't get game password"
+    main.append(p4)
+    //makes p and input for nickname
+    const p5 = document.createElement("p")
+    p5.innerText = "Your Nickname:"
+    main.append(p5)
+    const input = document.createElement("input")
+    input.placeholder = "Nickname"
+    input.type="text"
+    main.append(input)
+    //makes 5 p for players' names
+    const p6 = document.createElement("p")
+    p6.innerText = "Players"
+    main.append(p6)
+    const p7 = document.createElement("p")
+    p7.innerText = "1. Host:"
+    main.append(p7)
+    const p8 = document.createElement("p")
+    p8.innerText = "2. Player:"
+    main.append(p8)
+    const p9 = document.createElement("p")
+    p9.innerText = "3. Player:"
+    main.append(p9)
+    const p10 = document.createElement("p")
+    p10.innerText = "4. Player:"
+    main.append(p10)
+    //makes input for start button
+    if(host)
+    {
+        const input2 = document.createElement("input")
+        input2.value = "Start"
+        input2.type="button"
+        main.append(input2)
+    }else
+    {
+        const p11 = document.createElement("p")
+        p11.innerText = "Waiting for Host..."
+        main.append(p11)
+    }
+    //adds main to body
+    document.querySelector("body").insertBefore(main, document.querySelector("script"))
+    
+}
 play_on()
 
 //some code that probably wont be used anymore, but im not deleting it for some reason
