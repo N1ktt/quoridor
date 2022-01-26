@@ -123,7 +123,7 @@ function create_game() {
         input3.type = "button"
         input3.value = "Create"
         input3.addEventListener("click", () => {
-            waiting(false);
+            waiting(true)
         })
         main.append(input3)
         //adds main to page
@@ -179,18 +179,16 @@ function join_game() {
         document.querySelector("body").append(main)
     }, 1500)
 }
-function waiting(host)
-{
+function waiting(host) {
     //makes new main
     document.querySelector("main").remove()
     const main = document.createElement("main")
     main.classList.add("waiting")
     //creates h2
     const h2 = document.createElement("h2")
-    if(host)
-    {
+    if (host) {
         h2.innerText = "Hosting"
-    }else{
+    } else {
         h2.innerText = "Waiting for Host"
     }
     main.append(h2)
@@ -214,7 +212,7 @@ function waiting(host)
     main.append(p5)
     const input = document.createElement("input")
     input.placeholder = "Nickname"
-    input.type="text"
+    input.type = "text"
     main.append(input)
     //makes 5 p for players' names
     const p6 = document.createElement("p")
@@ -233,23 +231,79 @@ function waiting(host)
     p10.innerText = "4. Player:"
     main.append(p10)
     //makes input for start button
-    if(host)
-    {
+    if (host) {
         const input2 = document.createElement("input")
         input2.value = "Start"
-        input2.type="button"
+        input2.type = "button"
         main.append(input2)
-    }else
-    {
+    } else {
         const p11 = document.createElement("p")
         p11.innerText = "Waiting for Host..."
         main.append(p11)
     }
     //adds main to body
     document.querySelector("body").insertBefore(main, document.querySelector("script"))
-    
 }
-play_on()
+function setBoardSize() {
+    let main = {
+        instance: document.querySelector("main"),
+        //sets the factor to the lower value
+        factor: function () {
+            if (this.instance.offsetHeight > this.instance.offsetWidth) {
+                return this.instance.offsetWidth
+            } else {
+                return this.instance.offsetHeight
+            }
+        },
+    }
+    board = main.instance.querySelector("section")
+    board.style.height = main.factor() - 20 + "px"
+    board.style.width = main.factor() - 20 + "px"
+}
+setBoardSize()
+window.addEventListener("resize", () => {
+    if (document.querySelector(".playing") != null) {
+        setBoardSize()
+    }
+})
+function generateBoard() {
+    board = document.querySelector(".playing section")
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 17; j++) {
+            if (j % 2 == 0) {
+                if ((j % 4 == 0 && i % 2 == 0) || (j % 4 == 2 && i % 2 == 1)) {
+                    let div = document.createElement("div")
+                    div.classList.add("white")
+                    board.append(div)
+                } else {
+                    let div = document.createElement("div")
+                    div.classList.add("black")
+                    board.append(div)
+                }
+            } else {
+                let div = document.createElement("div")
+                div.classList.add("plank")
+                div.classList.add("unclicked")
+                board.append(div)
+            }
+        }
+        if (i != 8) {
+            for (j = 0; j < 17; j++) {
+                let div = document.createElement("div")
+                if (j % 2 == 0) {
+                    div.classList.add("plank")
+                    div.classList.add("unclicked")
+                } else {
+                    div.classList.add("intersection")
+                    div.classList.add("unclicked")
+                }
+                board.append(div)
+            }
+        }
+    }
+}
+generateBoard()
+// play_on()
 
 //some code that probably wont be used anymore, but im not deleting it for some reason
 
