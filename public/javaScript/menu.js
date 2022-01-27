@@ -235,6 +235,7 @@ function waiting(host) {
         const input2 = document.createElement("input")
         input2.value = "Start"
         input2.type = "button"
+        input2.addEventListener("click", startGame)
         main.append(input2)
     } else {
         const p11 = document.createElement("p")
@@ -260,7 +261,6 @@ function setBoardSize() {
     board.style.height = main.factor() - 20 + "px"
     board.style.width = main.factor() - 20 + "px"
 }
-setBoardSize()
 window.addEventListener("resize", () => {
     if (document.querySelector(".playing") != null) {
         setBoardSize()
@@ -314,9 +314,41 @@ function generateBoard() {
         }
     }
 }
-generateBoard()
-
-// play_on()
+function startGame() {
+    //creates number of planks display in header and time counter
+    const ul = document.createElement("ul")
+    let players = ["", "jfa", "dfa", "Xx_NiszczycielBananów_xX", "EE"]
+    for (i = 0; i < 5; i++) {
+        const li = document.createElement("li")
+        if (i == 0) {
+            li.innerText = "Planks:"
+        } else {
+            li.innerText = `${players[i]}: 10`
+        }
+        ul.append(li)
+    }
+    const li = document.createElement("li")
+    const img = document.createElement("img")
+    li.append(img)
+    li.innerText = "30"
+    ul.append(li)
+    document.querySelector("header").append(ul)
+    //create new main with board, then generates it
+    document.querySelector("main").remove()
+    const main = document.createElement("main")
+    main.classList.add("playing")
+    const section = document.createElement("section")
+    for (i = 0; i < 4; i++) {
+        const div = document.createElement("div")
+        div.classList.add("board-border")
+        section.append(div)
+    }
+    main.append(section)
+    document.querySelector("body").append(main)
+    generateBoard()
+    setBoardSize()
+}
+play_on()
 
 //some code that probably wont be used anymore, but im not deleting it for some reason
 
