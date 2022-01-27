@@ -282,8 +282,14 @@ function generateBoard() {
                 }
             } else {
                 let div = document.createElement("div")
-                div.classList.add("plank")
+                div.classList.add("plank-spot")
                 div.classList.add("unclicked")
+                div.addEventListener("click", () => {
+                    div.classList.add("clicked")
+                    div.classList.remove("unclicked")
+                    div.classList.add("plank")
+                    div.classList.remove("plank-spot")
+                })
                 board.append(div)
             }
         }
@@ -291,8 +297,14 @@ function generateBoard() {
             for (j = 0; j < 17; j++) {
                 let div = document.createElement("div")
                 if (j % 2 == 0) {
-                    div.classList.add("plank")
+                    div.classList.add("plank-spot")
                     div.classList.add("unclicked")
+                    div.addEventListener("click", () => {
+                        div.classList.add("clicked")
+                        div.classList.remove("unclicked")
+                        div.classList.add("plank")
+                        div.classList.remove("plank-spot")
+                    })
                 } else {
                     div.classList.add("intersection")
                     div.classList.add("unclicked")
@@ -303,6 +315,7 @@ function generateBoard() {
     }
 }
 generateBoard()
+
 // play_on()
 
 //some code that probably wont be used anymore, but im not deleting it for some reason

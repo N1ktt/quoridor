@@ -610,10 +610,15 @@ main {
     background-color: #ddd;
 }
 
-.intersection,
-.plank,
-.board-border {
+.board-border,
+.clicked {
     background-color: #95704f;
+}
+.unclicked {
+    background-color: rgb(107, 107, 107);
+}
+.plank-spot:hover {
+    background-color: #70543b;
 }
 .playing section div:nth-child(1) {
     grid-row: 1/-1;
@@ -632,8 +637,23 @@ main {
     grid-column: 1/-1;
 }
 .white {
-    background-color: #ddd;
+    background-color: #fff;
+    box-shadow: inset 0px 0px 50px 9px rgba(66, 68, 90, 0.35);
 }
 .black {
     background-color: #111;
+}
+header ul {
+    grid-column: 2/7;
+    grid-row: 2/4;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header ul li {
+    color: rgb(190, 240, 137);
+    font-family: monospace;
+    font-size: large;
 }
