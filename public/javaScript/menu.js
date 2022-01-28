@@ -129,6 +129,11 @@ function create_game() {
         //adds main to page
         main.classList.add("create-game")
         document.querySelector("body").insertBefore(main, document.querySelector("script"))
+        //adds opening animation
+        const all = document.querySelectorAll(".create-game > *")
+        all.forEach((element) => {
+            element.classList.add("page-open")
+        })
     }, 1500)
 }
 function refresh_list() {}
@@ -177,73 +182,100 @@ function join_game() {
         main.append(ul)
         refresh_list()
         document.querySelector("body").append(main)
+        //adds opening animation
+        const all = document.querySelectorAll(".join-game > *")
+        all.forEach((element) => {
+            element.classList.add("page-open")
+        })
     }, 1500)
 }
 function waiting(host) {
-    //makes new main
-    document.querySelector("main").remove()
-    const main = document.createElement("main")
-    main.classList.add("waiting")
-    //creates h2
-    const h2 = document.createElement("h2")
+    //adds closeing animation
     if (host) {
-        h2.innerText = "Hosting"
+        let all = document.querySelectorAll(".create-game > *")
+        all.forEach((element) => {
+            element.classList.remove("page-open")
+            element.classList.add("page-close")
+        })
     } else {
-        h2.innerText = "Waiting for Host"
+        let all = document.querySelectorAll(".join-game > *")
+        all.forEach((element) => {
+            element.classList.remove("page-open")
+            element.classList.add("page-close")
+        })
     }
-    main.append(h2)
-    //makes 2 p for game name
-    const p1 = document.createElement("p")
-    p1.innerText = "Game name:"
-    main.append(p1)
-    const p2 = document.createElement("p")
-    p2.innerText = "can't get game name"
-    main.append(p2)
-    //makes 2 p for game password
-    const p3 = document.createElement("p")
-    p3.innerText = "Password:"
-    main.append(p3)
-    const p4 = document.createElement("p")
-    p4.innerText = "can't get game password"
-    main.append(p4)
-    //makes p and input for nickname
-    const p5 = document.createElement("p")
-    p5.innerText = "Your Nickname:"
-    main.append(p5)
-    const input = document.createElement("input")
-    input.placeholder = "Nickname"
-    input.type = "text"
-    main.append(input)
-    //makes 5 p for players' names
-    const p6 = document.createElement("p")
-    p6.innerText = "Players"
-    main.append(p6)
-    const p7 = document.createElement("p")
-    p7.innerText = "1. Host:"
-    main.append(p7)
-    const p8 = document.createElement("p")
-    p8.innerText = "2. Player:"
-    main.append(p8)
-    const p9 = document.createElement("p")
-    p9.innerText = "3. Player:"
-    main.append(p9)
-    const p10 = document.createElement("p")
-    p10.innerText = "4. Player:"
-    main.append(p10)
-    //makes input for start button
-    if (host) {
-        const input2 = document.createElement("input")
-        input2.value = "Start"
-        input2.type = "button"
-        input2.addEventListener("click", startGame)
-        main.append(input2)
-    } else {
-        const p11 = document.createElement("p")
-        p11.innerText = "Waiting for Host..."
-        main.append(p11)
-    }
-    //adds main to body
-    document.querySelector("body").insertBefore(main, document.querySelector("script"))
+
+    setTimeout(() => {
+        //makes new main
+        document.querySelector("main").remove()
+        const main = document.createElement("main")
+        main.classList.add("waiting")
+        //creates h2
+        const h2 = document.createElement("h2")
+        if (host) {
+            h2.innerText = "Hosting"
+        } else {
+            h2.innerText = "Waiting for Host"
+        }
+        main.append(h2)
+        //makes 2 p for game name
+        const p1 = document.createElement("p")
+        p1.innerText = "Game name:"
+        main.append(p1)
+        const p2 = document.createElement("p")
+        p2.innerText = "can't get game name"
+        main.append(p2)
+        //makes 2 p for game password
+        const p3 = document.createElement("p")
+        p3.innerText = "Password:"
+        main.append(p3)
+        const p4 = document.createElement("p")
+        p4.innerText = "can't get game password"
+        main.append(p4)
+        //makes p and input for nickname
+        const p5 = document.createElement("p")
+        p5.innerText = "Your Nickname:"
+        main.append(p5)
+        const input = document.createElement("input")
+        input.placeholder = "Nickname"
+        input.type = "text"
+        main.append(input)
+        //makes 5 p for players' names
+        const p6 = document.createElement("p")
+        p6.innerText = "Players"
+        main.append(p6)
+        const p7 = document.createElement("p")
+        p7.innerText = "1. Host:"
+        main.append(p7)
+        const p8 = document.createElement("p")
+        p8.innerText = "2. Player:"
+        main.append(p8)
+        const p9 = document.createElement("p")
+        p9.innerText = "3. Player:"
+        main.append(p9)
+        const p10 = document.createElement("p")
+        p10.innerText = "4. Player:"
+        main.append(p10)
+        //makes input for start button
+        if (host) {
+            const input2 = document.createElement("input")
+            input2.value = "Start"
+            input2.type = "button"
+            input2.addEventListener("click", startGame)
+            main.append(input2)
+        } else {
+            const p11 = document.createElement("p")
+            p11.innerText = "Waiting for Host..."
+            main.append(p11)
+        }
+        //adds main to body
+        document.querySelector("body").insertBefore(main, document.querySelector("script"))
+        //adds opening animation
+        const all = document.querySelectorAll(".waiting > *")
+        all.forEach((element) => {
+            element.classList.add("page-open2")
+        })
+    }, 500)
 }
 function setBoardSize() {
     let main = {
@@ -315,38 +347,53 @@ function generateBoard() {
     }
 }
 function startGame() {
-    //creates number of planks display in header and time counter
-    const ul = document.createElement("ul")
-    let players = ["", "jfa", "dfa", "Xx_NiszczycielBananów_xX", "EE"]
-    for (i = 0; i < 5; i++) {
-        const li = document.createElement("li")
-        if (i == 0) {
-            li.innerText = "Planks:"
-        } else {
-            li.innerText = `${players[i]}: 10`
+    //adds closing animation
+    let all = document.querySelectorAll(".waiting > *")
+    all.forEach((element) => {
+        element.classList.remove("page-open2")
+        element.classList.add("page-close2")
+    })
+    setTimeout(() => {
+        //creates number of planks display in header and time counter
+        const ul = document.createElement("ul")
+        let players = ["", "jfa", "dfa", "Xx_NiszczycielBananów_xX", "EE"]
+        for (i = 0; i < 5; i++) {
+            const li = document.createElement("li")
+            if (i == 0) {
+                li.innerText = "Planks:"
+            } else {
+                li.innerText = `${players[i]}: 10`
+            }
+            ul.append(li)
         }
+        const li = document.createElement("li")
+        const img = document.createElement("img")
+        li.append(img)
+        li.innerText = "30"
         ul.append(li)
-    }
-    const li = document.createElement("li")
-    const img = document.createElement("img")
-    li.append(img)
-    li.innerText = "30"
-    ul.append(li)
-    document.querySelector("header").append(ul)
-    //create new main with board, then generates it
-    document.querySelector("main").remove()
-    const main = document.createElement("main")
-    main.classList.add("playing")
-    const section = document.createElement("section")
-    for (i = 0; i < 4; i++) {
-        const div = document.createElement("div")
-        div.classList.add("board-border")
-        section.append(div)
-    }
-    main.append(section)
-    document.querySelector("body").append(main)
-    generateBoard()
-    setBoardSize()
+        document.querySelector("header").append(ul)
+        //create new main with board, then generates it
+        document.querySelector("main").remove()
+        const main = document.createElement("main")
+        main.classList.add("playing")
+        const section = document.createElement("section")
+        for (i = 0; i < 4; i++) {
+            const div = document.createElement("div")
+            div.classList.add("board-border")
+            section.append(div)
+        }
+        main.append(section)
+        document.querySelector("body").append(main)
+        generateBoard()
+        setBoardSize()
+        //adds opening animation
+        let all = document.querySelectorAll(".playing > *")
+        all.forEach((element) => {
+            element.classList.add("page-open")
+        })
+        all = querySelector("header ol")
+        all.classList.add("page-open")
+    }, 500)
 }
 play_on()
 
