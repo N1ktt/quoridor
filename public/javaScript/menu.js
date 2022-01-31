@@ -368,9 +368,12 @@ function startGame() {
         }
         const li = document.createElement("li")
         const img = document.createElement("img")
+        img.src = "img/timer.png"
         li.append(img)
-        li.innerText = "30"
+        const textNode = document.createTextNode(" 30")
+        li.append(textNode)
         ul.append(li)
+        // ul.append(li2)
         document.querySelector("header").append(ul)
         //create new main with board, then generates it
         document.querySelector("main").remove()

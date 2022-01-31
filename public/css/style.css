@@ -706,3 +706,7 @@ header ul li {
     font-family: monospace;
     font-size: large;
 }
+header img {
+    max-width: 30px;
+    max-height: 30px;
+}
