@@ -1,0 +1,19 @@
+{
+  "name": "quoridor",
+  "version": "1.0.0",
+  "description": "Multiplayer game called quoridor",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N1ktt/quoridor.git"
+  },
+  "author": "N1kt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N1ktt/quoridor/issues"
+  },
+  "homepage": "https://github.com/N1ktt/quoridor#readme"
+}
